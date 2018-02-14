@@ -1,21 +1,22 @@
 $(function() {
   SHUFFLE_COUNT = 20
 
-  function start(stands) {
+  function start(topics) {
     $('#wrapper').click(function() {
-      shuffle(stands, SHUFFLE_COUNT);
+      shuffle(topics, SHUFFLE_COUNT);
     });
   }
 
-  function shuffle(stands, counter) {
+  function shuffle(topics, counter) {
+    $('h2').remove();
+
     if (counter < 1) { return }
 
-    var stand = _.sample(stands);
+    var topic = _.sample(topics);
 
-    $('h1').text(stand.stand_name);
-    $('h2').text(stand.operator_name);
+    $('h1').text(topic);
 
-    setTimeout(function() { shuffle(stands, counter - 1)}, 50);
+    setTimeout(function() { shuffle(topics, counter - 1)}, 50);
   }
 
   function fit() {
