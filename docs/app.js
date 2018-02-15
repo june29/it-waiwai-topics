@@ -23,6 +23,8 @@ $(function() {
     $('#wrapper').width($(window).width()).height($(window).height());
   }
 
+  FastClick.attach(document.body);
+
   fit();
   $(window).resize(fit);
 
